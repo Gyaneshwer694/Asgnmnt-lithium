@@ -68,10 +68,30 @@ router.get('/Films', function (req ,res) {
         "id": 4,
         "name": "Finding Nemo"
        }]
-    res.send(Films)   
-       
-    
+    res.send(Films)       
 })
+router.get('/Films', function (req ,res) {
+    let Films = [ {
+        "id": 1,
+        "name": "The Shining"
+       }, {
+        "id": 2,
+        "name": "Incendies"
+       }, {
+        "id": 3,
+        "name": "Rang de Basanti"
+       }, {
+        "id": 4,
+        "name": "Finding Nemo"
+       }]
+    const FilmId = req.params.id 
+    if (FilmId > 4){
+        res.send("No movie exists with this id")
+    } else{
+        res.send(Films[index])
+
+    }  
+})       
 
 
 module.exports = router;
