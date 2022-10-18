@@ -1,3 +1,4 @@
+const { Router } = require('express');
 const express = require('express');
 const abc = require('../introduction/intro')
 const router = express.Router();
@@ -38,6 +39,21 @@ router.get('/student-details/:name', function(req, res){
     let studentName = requestParams.name
     console.log('Name of the student is ', studentName)
     res.send('Dummy response')
+})
+router.get('/movies', function (req, res) {
+    let movies = ['3 idiots','James bond','American sniper','Batman begins'] 
+    res.send(movies)
+    
+})
+router.get('/moviesArr/:indexnumber', function(req.res) {
+    let moviesArr = ['3 idiots','James bond','American sniper','Batman begins']
+    const index = req.params.indexnumber
+    if(index > (moviesArr.length - 1)){
+        res.send("Index is invalid")
+    } else{
+        res.send(moviesArr[index])
+    }
+
 })
 
 module.exports = router;
