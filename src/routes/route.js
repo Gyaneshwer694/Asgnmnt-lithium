@@ -70,7 +70,7 @@ router.get('/Films', function (req ,res) {
        }]
     res.send(Films)       
 })
-router.get('/Films', function (req ,res) {
+router.get('/Films/:FilmId', function (req ,res) {
     let Films = [ {
         "id": 1,
         "name": "The Shining"
