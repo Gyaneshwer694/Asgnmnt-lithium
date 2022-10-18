@@ -45,7 +45,7 @@ router.get('/movies', function (req, res) {
     res.send(movies)
     
 })
-router.get('/moviesArr/:indexnumber', function(req.res) {
+router.get('/moviesArr/:indexnumber', function(req, res) {
     let moviesArr = ['3 idiots','James bond','American sniper','Batman begins']
     const index = req.params.indexnumber
     if(index > (moviesArr.length - 1)){
@@ -53,7 +53,25 @@ router.get('/moviesArr/:indexnumber', function(req.res) {
     } else{
         res.send(moviesArr[index])
     }
-
 })
+router.get('/Films', function (req ,res) {
+    let Films = [ {
+        "id": 1,
+        "name": "The Shining"
+       }, {
+        "id": 2,
+        "name": "Incendies"
+       }, {
+        "id": 3,
+        "name": "Rang de Basanti"
+       }, {
+        "id": 4,
+        "name": "Finding Nemo"
+       }]
+    res.send(Films)   
+       
+    
+})
+
 
 module.exports = router;
