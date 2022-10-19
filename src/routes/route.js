@@ -88,7 +88,7 @@ router.get('/Films/:FilmId', function (req ,res) {
     if (FilmId > 4){
         res.send("No movie exists with this id")
     } else{
-        res.send(Films[index])
+        res.send(Films)
 
     }  
 })       
