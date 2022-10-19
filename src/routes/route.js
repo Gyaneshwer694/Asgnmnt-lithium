@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const express = require('express');
 const abc = require('../introduction/intro')
+const con = require('../consecutive')
 const router = express.Router();
 
 router.get('/test-me', function (req, res) {
@@ -91,7 +92,21 @@ router.get('/Films/:FilmId', function (req ,res) {
         res.send(Films)
 
     }  
-})       
+})  
+router.get("/sol1", function (req, res){
+    let array = [1,2,3,5,6,7]
+    function missingNum(array){
+    let p = array.lenth;
+    let total = ((n + 2) * (n + 1)) / 2;
+    for (let i = 0; i < n; i++){
+        total = total - array[i]
+    }
+    return total;
+}
+    console.log(missingNum(array));
+    res.send({ data: missingNumber } );
+
+})    
 
 
 module.exports = router;
