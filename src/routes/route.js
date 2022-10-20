@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const express = require('express');
 const abc = require('../introduction/intro')
-const con = require('../consecutive')
+//const con = require('../consecutive')
 const router = express.Router();
 
 router.get('/test-me', function (req, res) {
@@ -97,16 +97,27 @@ router.get("/sol1", function (req, res){
     let array = [1,2,3,5,6,7]
     function missingNum(array){
     let p = array.lenth;
-    let total = ((n + 2) * (n + 1)) / 2;
-    for (let i = 0; i < n; i++){
+    let total = ((p + 2) * (p + 1)) / 2;
+    for (let i = 0; i < p; i++){
         total = total - array[i]
     }
     return total;
 }
     console.log(missingNum(array));
-    res.send({ data: missingNumber } );
+    res.send({ data: missingNum } );
 
-})    
+})   
+router.get("/sol2", function(req , res){
+    let arr = [33,34, 35, 37, 38]
+    function findnum(arr){
+       let b = arr.lenth;
+       total = ((b + 1) * (b + 2)) / 2;
+       let sum = arr.reduce((p,q) => p + q, 0);
+       return total - sum;
+     } 
+        console.log(findnum(arr));
+        res.send({data : findnum(arr)});
+    })
 
 
 module.exports = router;
