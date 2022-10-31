@@ -13,6 +13,10 @@ const getnewBook = async function(req, res){
     
 }
 const completeBookdetails= async function(req,res){
-    let specificBook = await bookModel.find().populate('newAuthor_id').populate('publisher_id')
+    let specificBook = await newBookModel.find().populate('Author_id').populate('publisher_id')
     res.send({data: specificBook})
 }
+
+module.exports.createnewBook= createnewBook
+module.exports.getnewBook= getnewBook
+module.exports.completeBookdetails = completeBookdetails
