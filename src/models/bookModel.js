@@ -22,6 +22,6 @@ const bookSchema = new mongoose.Schema( {
     isDeleted: Boolean //true on book deletion i.e you flag the document/data as isDeleted: true..(mark "dirty")
 
 }, { timestamps: true });
-
+    
 
 module.exports = mongoose.model('Book', bookSchema) //users

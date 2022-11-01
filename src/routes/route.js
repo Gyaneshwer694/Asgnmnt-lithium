@@ -48,8 +48,15 @@ router.post("/createBook", BookController.createBook  )
 
 
 
-router.get("/basicRoute", commonMW.mid1, commonMW.mid2, commonMW.mid3, commonMW.mid4, UserController.basicCode)
+router.get("/basicRoute", commonMW.mid1, commonMW.mid2, commonMW.mid3, commonMW.mid4,commonMW.mid5, UserController.basicCode)
 
+
+
+router.get("/basicAPI" ,commonMW.mid6, UserController.basicAPI)
+
+router.get("/newUser",commonMW.mid6,UserController.newUser)
+
+router.get("/testAPI",commonMW.mid6,UserController.testAPI)
 
 
 // router.get("/basicRoute2", commonMW.mid1, UserController.basicCode2)
