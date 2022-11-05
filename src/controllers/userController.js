@@ -39,7 +39,7 @@ const loginUser = async function (req, res) {
     },
     "functionup-lithium-Gyaneshwer"
   );
-  res.setHeader("x-auth-token", token);
+  res.setHeader("git", token);
   res.send({ status: true, token: token });
 };
 
