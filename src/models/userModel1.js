@@ -17,6 +17,6 @@ const userSchema = new mongoose.Schema( {
         default : false
     },
     age: Number,
-}); 
+},  { timestamps: true });
 
 module.exports = mongoose.model('User2', userSchema)   //users
