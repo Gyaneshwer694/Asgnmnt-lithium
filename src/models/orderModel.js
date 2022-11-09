@@ -1,13 +1,25 @@
 const mongoose = require('mongoose');
 
-const orderSchema = new mongoose.Schema( {
-    
-    userId: String,  
-	productId: String, 
-	amount: Number,
-	isFreeAppUser: Boolean , 
-	date: Date,
-}); 
+const objectId=mongoose.Schema.Types.ObjectId;
 
+let orderSchema=new mongoose.Schema({
+userId:{
+    type:objectId,
+    ref:"User"
+},
+productId:{
+    type:objectId,
+    ref:"Product"
+},
+amount:Number,
+isFreeAppUser:{
+    type:Boolean,
+    default:true
+},
+date:{
+    type:String
+}
 
-    
+},{timestamps:true})
+
+module.exports=mongoose.model('Order0', orderSchema)
