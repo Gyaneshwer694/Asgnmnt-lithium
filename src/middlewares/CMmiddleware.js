@@ -1,17 +1,19 @@
 const res = require("express/lib/response");
 
-const checkheader=(req,res,next)=>{
-    if(req.headers.isfreeappuser != undefined){
-        req.wantsJson = true
-    } else {
-        req.wantsJson = false
-    }
-    next()
-}
+const letCheckIsFreeAppUser = async function(req,res,next){               
+   
+        let data=req.headers
+        let validinfo=data["isfreeappuser"]
+        if(validinfo){
+            if(validinfo=="true"){
+                req.isfreeappuser=true
+            }else{
+                req.isfreeappuser=false
+            }
+            next();
+        }else{
+            res.send({data:"header missing"})
+        }
+        }
 
-    res.send({
-        'msg':'The request is missing a mandatory header'
-
-    });
-
-module.exports.checkheader = checkheader
+module.exports.mid1=letCheckIsFreeAppUser
